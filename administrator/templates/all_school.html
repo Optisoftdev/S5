@@ -1,0 +1,53 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <!-- main content -->
+<section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>All Schools</h2>
+                <small class="text-muted">Welcome to S5 application</small>
+            </div>
+            <div class="row clearfix">
+                
+                {% for school in schools %}
+                    
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="body">
+                            <div class="member-card verified">
+                                <div class="thumb-xl member-thumb">
+                                    {% if school.logo %}
+                                    <a href="{% url 'administrator:view_school' id=school.id %}"> <img src="{{ school.logo.url }}" class="img-thumbnail rounded-circle" alt="profile-image"></a>
+                                    {% endif %}
+                                </div>
+    
+                                <div class="m-t-20">
+                                    <h4 class="m-b-0">{{school.name}}</h4>
+                                    <p class="text-muted">{{school.school_type}}</p>
+                                </div>
+    
+                                <p class="text-muted">{{school.address}}</p>                           
+                                <a href="{% url 'administrator:view_school' id=school.id %}"  class="btn btn-raised btn-default">View Profile</a>
+                                <ul class="social-links  m-t-10">
+                                    <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                    <li><a title="twitter" href="#" ><i class="zmdi zmdi-twitter"></i></a></li>
+                                    <li><a title="instagram" href="3.html" ><i class="zmdi zmdi-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row clearfix">
+                <div class="col-sm-12 text-center">
+                    <a href="{% url 'administrator:register' %}" class="btn btn-raised btn-primary">Add School</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- main content -->
+{% endblock%}

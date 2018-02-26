@@ -1,0 +1,224 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!-- main content -->
+<section class="content profile-page">
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>School Profile</h2>
+                <small class="text-muted">Welcome to S5 application</small>
+            </div>        
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class=" card">
+                        {% if instance.logo %}
+                        <img src="{{instance.logo.url}}" class="img-fluid" alt="">                              
+                        {% endif %}
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <h2>About School</h2>
+                        </div>
+                        <div class="body">
+                            <strong>Name</strong>
+                            <p>{{instance.name}}</p>
+                            <strong>Category</strong>
+                            <p>{{instance.school_type}}</p>
+                            <strong>State</strong>
+                            <p>{{instance.state}}</p>
+                            <strong>L.G.A</strong>
+                            <p>{{instance.lga}}</p>
+                            <hr>
+                            <strong>Address</strong>
+                            <address>{{instance.address}}</address>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <div class="card">
+                        <div class="body"> 
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#report">Biography</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#admin">School Admin</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#add">Add School Admin</a></li>
+                            </ul>
+                            
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane in active" id="report">
+                                    <div class="wrap-reset">
+                                        <div class="mypost-list">
+                                            <div class="post-box">
+                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>
+                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>
+                                            </div>
+                                            <hr>
+                                            <div class="post-box">
+                                                <h4>Skill Set</h4>                                        
+                                                <div class="body p-l-0 p-r-0">
+                                                    <ul class="list-unstyled">
+                                                        <li>
+                                                            <div>Cake PHP</div>
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:80%"> <span class="sr-only">80% Complete (success)</span> </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>CSS</div>
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:50%"> <span class="sr-only">50% Complete</span> </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>PHP</div>
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"> <span class="sr-only">60% Complete (warning)</span> </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>HTML</div>
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:20%"> <span class="sr-only">20% Complete (danger)</span> </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <h4>Education</h4>
+                                            <ul class="dis">
+                                                <li>Primary School (Year 1 to 6)</li>
+                                                <li>Secondary School (Year 7 to 11)</li>
+                                                <li>Colleges (BCA)</li>
+                                            </ul>
+                                            <hr>
+                                            <h4>Certification</h4>
+                                            <ul class="dis">
+                                                <li>Integer aesent vest .</li>
+                                                <li>Praesent vestibulum dapibus nibh.</li>
+                                                <li>Integer tinciaesent vest dunt.</li>
+                                                <li>Praesent vestibulum dapibus nibh.</li>
+                                                <li>Integer tincidunt.</li>
+                                                <li>Praesent vestibulum dapibus nibh.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="admin">
+                                    <div class="timeline-body">
+                                        <div class="row clearfix">
+                                            <div class="col-lg-12 col-md-12">
+                                                <div class="card">
+                                                    <div class="body">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover dashboard-task-infos">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>#</th>
+                                                                        <th>Task</th>
+                                                                        <th>Status</th>
+                                                                        <th>Professors</th>
+                                                                        <th>Progress</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>Task A</td>
+                                                                        <td><span class="label bg-green">Doing</span></td>
+                                                                        <td>John Doe</td>
+                                                                        <td><div class="progress m-b-0">
+                                                                                <div class="progress-bar bg-green" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width: 62%"></div>
+                                                                            </div></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>           
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="add">
+                                        <div class="timeline-body">
+                                            <div class="timeline m-border">
+                                                <div class="row clearfix">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                                            <div class="card">
+                                                                <div class="header">
+                                                                    <h2>School Admin Information</h2>
+                                                                </div>
+                                                                <div class="body">
+                                                                    <form action="" method="post" enctype="multipart/form-data">
+                                                                        {% csrf_token %} 
+                                                                    <div class="row clearfix">
+                                                                        <div class="col-md-4 col-sm-12">
+                                                                            <div class="form-group">
+                                                                                <div class="form-line">
+                                                                                    <input type="text" class="form-control" name="first_name" placeholder="First Name">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-12">
+                                                                            <div class="form-group">
+                                                                                <div class="form-line">
+                                                                                    <input type="text" class="form-control" name="middlename" placeholder="MiddleName">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-12">
+                                                                            <div class="form-group">
+                                                                                <div class="form-line">
+                                                                                    <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row clearfix">
+                                                                        <div class="col-md-6 col-sm-12">
+                                                                            <div class="form-group">
+                                                                                <div class="form-line">
+                                                                                    <input type="email" class="form-control" name="email" placeholder="Email">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-sm-12">
+                                                                            <div class="form-group drop-custum">
+                                                                                <select class="form-control show-tick" name="gender">
+                                                                                    <option value="">-- Gender --</option>
+                                                                                    <option value="islam">Male</option>
+                                                                                    <option value="christian">Female</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row clearfix">
+                                                                        
+                                                                        
+                                                                        <div class="col-sm-12">
+                                                                            <button type="submit" class="btn btn-raised g-bg-blush2">Submit</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- main content -->
+
+{% endblock%}

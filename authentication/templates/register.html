@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      {% load static %}
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <meta name="msapplication-TileColor" content="#5bc0de" />
+    <meta name="msapplication-TileImage" content="assets/img/metis-tile.png" />
+    <link rel="stylesheet" href="{% static 'assets/lib/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/lib/magic/magic.css' %}">
+  </head>
+  <body class="login">
+    <div class="container">
+      <div class="text-center">
+        <img src="{% static 'assets/img/logo.png' %}" alt="Metis Logo">
+      </div>
+      <div class="tab-content">
+        <div id="signup" class="tab-pane active">
+          <form action="index.html" class="form-signin">
+              {% csrf_token %}
+              <input type="text" placeholder="username" name="username" class="form-control">
+              <input type="password" placeholder="password" name="password" class="form-control">
+              <input type="text" placeholder="School Name" name="school_name" class="form-control">
+              <input type="text" placeholder="School Address" name="school_address" class="form-control">
+              <input type="email" placeholder="Email" name="contact_email" class="form-control">
+              <input type="text" placeholder="Phone Number" name="contact_phone" class="form-control">
+              {% comment %} <input type="hidden" value="{{school.id}}" name="contact_phone" class="form-control"> {% endcomment %}
+              <select class="form-control" name="school">
+                <option>Choose School</option>
+                <option>Primary</option>
+                <option>Secondary</option>
+              </select>
+              <select class="form-control" name="state">
+                <option>Choose State</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              <select class="form-control" name="lga">
+                <option>Choose LGA</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              <button class="btn btn-lg btn-success btn-block" type="submit">Register</button>
+          </form>
+        </div>
+      </div>
+      <div class="text-center">
+        <ul class="list-inline">
+          <li> <a class="text-muted" href="/login" data-toggle="tab">Login</a>  </li>
+          <li> <a class="text-muted" href="/registration" data-toggle="tab">Signup</a>  </li>
+        </ul>
+      </div>
+    </div><!-- /container -->
+    <script src="{% static 'assets/lib/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/lib/bootstrap/js/bootstrap.js' %}"></script>
+    <script>
+      alert({{school.id}});
+    </script>
+  </body>
+</html>
